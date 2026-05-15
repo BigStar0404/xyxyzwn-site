@@ -5,6 +5,45 @@
   background: #78d8f0;
 }
 
+.home-link {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px 8px 10px;
+  border: 2px solid rgba(255, 255, 255, 0.82);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow: 0 10px 24px rgba(14, 116, 144, 0.18);
+  color: #075985;
+  font-weight: 800;
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+}
+
+.home-link:hover {
+  background: #ffffff;
+}
+
+.home-link:focus-visible {
+  outline: 3px solid rgba(14, 165, 233, 0.72);
+  outline-offset: 3px;
+}
+
+.home-link-icon {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.25;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .canvas-scene {
   display: block;
   width: 100vw;
