@@ -1,0 +1,15 @@
+# Hugo build output
+site/public/
+
+# Vite build output
+apps/game/dist/
+
+# dependencies
+node_modules/
+
+# system files
+.DS_Store
+Thumbs.db
+
+# logs
+*.log
