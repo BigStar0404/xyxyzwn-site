@@ -152,9 +152,20 @@ a {
     gap: 4px;
   }
 
-  .site-name a {
-    word-break: normal;
-    overflow-wrap: anywhere;
+  .site-name {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+
+    a {
+      word-break: normal;
+      overflow-wrap: anywhere;
+    }
+  }
+
+  .home-profile-emoji {
+    flex-shrink: 0;
+    font-size: 1.4rem;
   }
 
   .site-description {
