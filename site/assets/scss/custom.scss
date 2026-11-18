@@ -202,6 +202,39 @@ a {
   inset: 8px 8px auto auto;
 }
 
+.pixel-rain-toggle {
+  min-height: 40px;
+  padding: 6px 12px;
+  border: 1px solid currentColor;
+  border-radius: 10px;
+  background: var(--card-background);
+  color: var(--accent-color);
+  cursor: pointer;
+
+  &[aria-pressed="true"] {
+    background: #54406b;
+    color: #fff;
+  }
+}
+
+.pixel-rain-status:empty {
+  display: none;
+}
+
+.pixel-rain-status {
+  color: var(--card-text-color-main);
+  font-size: 1.3rem;
+}
+
+.pixel-rain-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 6;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
 [data-scheme="dark"] .left-sidebar header.home-profile {
   background: rgba(31, 26, 38, 0.94);
 

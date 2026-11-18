@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#191722">
+  <title>像素工坊</title>
+  <link rel="stylesheet" href="./studio.css">
+  <script type="module" src="./studio.js"></script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="header-links">
+      <a href="/" class="home-link">← 返回首页</a>
+      <button type="button" id="open-gallery">查看图库</button>
+    </div>
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <div><h1>像素工坊</h1><p>在 16 × 16 的画板上画点什么</p></div>
+    </div>
+  </header>
+  <main class="studio">
+    <section class="workspace" aria-labelledby="board-title">
+      <h2 id="board-title">画板</h2>
+      <div class="board-frame">
+        <canvas id="board" width="384" height="384" aria-label="16 × 16 像素画板"></canvas>
+      </div>
+    </section>
+    <section class="controls" aria-label="绘画工具">
+      <div class="tool-group">
+        <h2>工具</h2>
+        <div class="tools">
+          <button type="button" data-tool="pen" aria-pressed="true">画笔</button>
+          <button type="button" data-tool="eraser" aria-pressed="false">橡皮擦</button>
+          <button type="button" id="undo" disabled>撤销</button>
+        </div>
+      </div>
+      <div class="tool-group">
+        <h2>调色</h2>
+        <div id="palette" class="palette" aria-label="预设颜色"></div>
+        <label class="color-field">自选颜色 <input id="color" type="color" value="#7c5cff"></label>
+      </div>
+      <div class="tool-group output">
+        <button type="button" id="save" class="primary" disabled>保存到网站</button>
+        <button type="button" id="export" disabled>导出 PNG</button>
+        <p class="note">保存后的画会进入公共图库，有机会出现在首页的弹弹方块里。</p>
+        <p id="message" role="status"></p>
+      </div>
+    </section>
+  </main>
+  <dialog id="gallery" aria-labelledby="gallery-title">
+    <div class="gallery-heading">
+      <h2 id="gallery-title">公共图库</h2>
+      <form method="dialog"><button type="submit">关闭</button></form>
+    </div>
+    <p id="gallery-status" role="status"></p>
+    <ul id="gallery-grid" class="gallery-grid"></ul>
+    <nav id="gallery-pages" aria-label="图库分页" hidden>
+      <button type="button" id="gallery-prev">上一页</button>
+      <span id="gallery-page"></span>
+      <button type="button" id="gallery-next">下一页</button>
+    </nav>
+  </dialog>
+</body>
+</html>

@@ -1,0 +1,65 @@
+:root {
+  color-scheme: dark;
+  font-family: "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+  color: #f6f3ff;
+  background: #191722;
+  --surface: #242130;
+  --line: #433c54;
+  --muted: #c0b8d0;
+  --accent: #d8ff83;
+}
+
+* { box-sizing: border-box; }
+body { max-width: 1040px; margin: auto; padding: 30px clamp(16px, 5vw, 52px) 40px; }
+a { color: inherit; }
+.home-link { color: var(--muted); font-size: .9rem; }
+.header-links, .gallery-heading, #gallery-pages:not([hidden]) { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.header-links button, .gallery-heading button, #gallery-pages button { padding-inline: 12px; }
+.brand { display: flex; align-items: center; gap: 15px; margin: 27px 0; }
+h1, h2, p { margin: 0; }
+h1 { font-size: clamp(1.75rem, 5vw, 2.75rem); }
+.brand p { margin-top: 4px; color: var(--muted); }
+.brand-mark { display: grid; grid-template-columns: repeat(2, 16px); gap: 3px; }
+.brand-mark i { height: 16px; background: #ad8cff; }
+.brand-mark i:nth-child(2) { background: var(--accent); }
+.brand-mark i:nth-child(3) { background: #ff9ebc; }
+.brand-mark i:nth-child(4) { background: #77d9eb; }
+.studio { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(240px, 1fr); gap: 16px; }
+.workspace, .controls { padding: clamp(12px, 3vw, 24px); border: 1px solid var(--line); border-radius: 16px; background: var(--surface); }
+h2 { font-size: 1rem; margin-bottom: 12px; }
+.board-frame { margin-inline: auto; max-width: 480px; border: 1px solid #8d829f; background: #eeebf4; }
+#board { display: block; width: 100%; aspect-ratio: 1; cursor: crosshair; touch-action: none; image-rendering: pixelated; }
+.controls { display: grid; align-content: start; gap: 16px; }
+.tool-group + .tool-group { padding-top: 16px; border-top: 1px solid var(--line); }
+.tools { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+button { min-height: 44px; padding: 6px; color: inherit; background: #322d42; border: 1px solid #544b67; border-radius: 8px; font: inherit; cursor: pointer; }
+button:hover:not(:disabled) { border-color: var(--accent); }
+button[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+button:disabled { opacity: .45; cursor: default; }
+:focus-visible { outline: 2px solid #bba5ff; outline-offset: 3px; }
+.palette { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 6px; }
+.swatch { background: var(--swatch); min-height: 32px; padding: 0; }
+.swatch[aria-pressed="true"] { outline: 2px solid var(--accent); outline-offset: 2px; }
+.color-field { margin-top: 12px; display: flex; justify-content: space-between; align-items: center; color: var(--muted); }
+input[type="color"] { width: 52px; height: 40px; padding: 2px; border: 1px solid var(--line); border-radius: 6px; cursor: pointer; }
+.output { display: grid; gap: 8px; }
+.primary { color: #232a13; background: var(--accent); border-color: var(--accent); font-weight: 700; }
+.note, #message { font-size: .85rem; line-height: 1.55; color: var(--muted); }
+#message:empty { display: none; }
+#message { color: var(--accent); }
+#gallery { width: min(680px, calc(100% - 24px)); max-height: 85dvh; padding: 16px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); color: inherit; }
+#gallery::backdrop { background: #100e1bd9; }
+.gallery-heading h2 { margin: 0; font-size: 1.25rem; }
+#gallery-status { margin-block: 12px; color: var(--muted); }
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(66px, 1fr)); gap: 8px; padding: 0; list-style: none; }
+.gallery-grid canvas { display: block; width: 100%; aspect-ratio: 1; image-rendering: pixelated; background: conic-gradient(#f5f1fa 25%, #e5dfed 0 50%, #f5f1fa 0 75%, #e5dfed 0) 0 0 / 16px 16px; }
+
+@media (max-width: 650px) {
+  body { padding-top: 18px; }
+  .brand { margin: 15px 0; }
+  .brand p { font-size: .85rem; }
+  .studio { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .workspace { padding-bottom: 12px; }
+  .palette { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .swatch { min-height: 40px; }
+}

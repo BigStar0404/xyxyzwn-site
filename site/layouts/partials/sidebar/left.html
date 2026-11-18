@@ -52,7 +52,14 @@
             <a href="{{ "post/" | relURL }}">{{ if $chinese }}文章{{ else }}Posts{{ end }}</a>
             <a href="{{ "categories/图赏/" | relURL }}">{{ if $chinese }}图赏{{ else }}Gallery{{ end }}</a>
             <a href="{{ "game/" | relURL }}">{{ if $chinese }}小游戏{{ else }}Game{{ end }}</a>
+            <a href="{{ "pixel/" | relURL }}">{{ if $chinese }}像素工坊{{ else }}Pixel Studio{{ end }}</a>
         </nav>
+        <button class="pixel-rain-toggle" id="pixel-rain-toggle" type="button" aria-pressed="false"
+            data-empty="{{ if $chinese }}图库还没有作品{{ else }}The gallery is empty{{ end }}"
+            data-error="{{ if $chinese }}图库暂时无法打开{{ else }}Gallery unavailable{{ end }}">
+            {{ if $chinese }}弹弹方块{{ else }}Bouncing Pixels{{ end }}
+        </button>
+        <span class="pixel-rain-status" role="status" id="pixel-rain-status"></span>
         {{ end }}
     </header>
 
