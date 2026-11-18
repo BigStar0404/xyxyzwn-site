@@ -1,5 +1,5 @@
 {{ if .IsHome }}
-    {{ with resources.Get "js/pixel-rain.js" }}
+    {{ with resources.Get "js/pixel-rain.js" | fingerprint }}
         <script src="{{ .RelPermalink }}" type="module"></script>
     {{ end }}
 {{ end }}

@@ -15,11 +15,12 @@ function stop() {
 async function start() {
   status.textContent = '';
   const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 7000);
   request = controller;
   toggle.setAttribute('aria-pressed', 'true');
   try {
     const response = await fetch('/pixel/api/artworks', {
-      signal: AbortSignal.any([controller.signal, AbortSignal.timeout(7000)]),
+      signal: controller.signal,
     });
     if (!response.ok) throw new Error('Gallery unavailable');
     const { artworks } = await response.json();
@@ -35,6 +36,7 @@ async function start() {
     stop();
     status.textContent = toggle.dataset.error;
   } finally {
+    clearTimeout(timeout);
     if (request === controller) request = undefined;
   }
 }

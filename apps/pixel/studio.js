@@ -172,6 +172,8 @@ download.addEventListener('click', () => {
 
 save.addEventListener('click', async () => {
   const submitted = pixels.slice();
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 8000);
   saving = true;
   message.textContent = '正在保存…';
   updateButtons();
@@ -180,7 +182,7 @@ save.addEventListener('click', async () => {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ pixels: submitted }),
-      signal: AbortSignal.timeout(8000),
+      signal: controller.signal,
     });
     if (response.status === 429) {
       message.textContent = '保存太频繁，请稍后重试。';
@@ -195,6 +197,7 @@ save.addEventListener('click', async () => {
   } catch {
     message.textContent = '暂时无法保存，请重试或先导出 PNG。';
   } finally {
+    clearTimeout(timeout);
     saving = false;
     updateButtons();
   }
@@ -212,13 +215,14 @@ let galleryRequest;
 async function loadGallery(page) {
   galleryRequest?.abort();
   const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 7000);
   galleryRequest = controller;
   galleryStatus.textContent = '正在加载图库…';
   grid.replaceChildren();
   previous.disabled = next.disabled = true;
   try {
     const response = await fetch(`/pixel/api/artworks?page=${page}`, {
-      signal: AbortSignal.any([controller.signal, AbortSignal.timeout(7000)]),
+      signal: controller.signal,
     });
     if (!response.ok) throw new Error('Gallery unavailable');
     const result = await response.json();
@@ -241,6 +245,8 @@ async function loadGallery(page) {
     if (galleryRequest !== controller) return;
     galleryPages.hidden = true;
     galleryStatus.textContent = '图库暂时无法打开，请关闭后重试。';
+  } finally {
+    clearTimeout(timeout);
   }
 }
 

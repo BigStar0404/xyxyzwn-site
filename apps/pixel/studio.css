@@ -47,7 +47,7 @@ input[type="color"] { width: 52px; height: 40px; padding: 2px; border: 1px solid
 .note, #message { font-size: .85rem; line-height: 1.55; color: var(--muted); }
 #message:empty { display: none; }
 #message { color: var(--accent); }
-#gallery { width: min(680px, calc(100% - 24px)); max-height: 85dvh; padding: 16px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); color: inherit; }
+#gallery { width: min(680px, calc(100% - 24px)); max-height: 85vh; max-height: 85dvh; padding: 16px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); color: inherit; }
 #gallery::backdrop { background: #100e1bd9; }
 .gallery-heading h2 { margin: 0; font-size: 1.25rem; }
 #gallery-status { margin-block: 12px; color: var(--muted); }
