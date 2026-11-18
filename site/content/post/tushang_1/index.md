@@ -2,7 +2,7 @@
 title: 图赏第一期_时光代理人
 description: 纯图赏 图片赞助by快手 black琴.
 date: 2025-03-18
-image: sgdlr_8.jpg
+image: cover.jpg
 categories:
     - 图赏
     - 时光代理人
@@ -23,3 +23,5 @@ categories:
 ![](sgdlr_11.jpg)
 
 ![](sgdlr_12.jpg)
+
+本期原图由快手 black琴提供。新封面见 [Sportskeeda 的三人合照](https://www.sportskeeda.com/anime/10-best-chinese-anime-watch)。

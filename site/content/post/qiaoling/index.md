@@ -2,7 +2,7 @@
 title: 乔苓
 description: 乔苓的角色解析
 date: 2025-03-16
-image: ql_3.jpg
+image: cover.jpg
 categories:
     - 乔苓
     - ql

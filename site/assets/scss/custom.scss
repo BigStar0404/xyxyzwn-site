@@ -122,6 +122,89 @@ a {
 }
 
 //-------------------------------------------------
+// 首页站名和快捷导航
+.left-sidebar header.home-profile {
+  --sidebar-avatar-size: 56px;
+  padding: 14px;
+  gap: 12px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-l1);
+
+  @include respond(lg) {
+    flex-direction: column;
+  }
+}
+
+.home-profile-identity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-inline-end: 39px;
+
+  @include respond(md) {
+    align-items: flex-start;
+    flex-direction: column;
+    padding-inline-end: 0;
+  }
+
+  .site-meta {
+    gap: 4px;
+  }
+
+  .site-name a {
+    word-break: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .site-description {
+    line-height: 1.45;
+  }
+}
+
+.home-profile-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+
+  a {
+    flex: 1 0 auto;
+    display: grid;
+    place-items: center;
+    min-height: 44px;
+    padding-inline: 8px;
+    border-radius: 10px;
+    background: #f3e9f1;
+    color: #48354a;
+    font-size: 1.4rem;
+    font-weight: 600;
+    word-break: normal;
+
+    &:hover,
+    &:focus-visible {
+      background: #e8d9e6;
+    }
+  }
+}
+
+.home-sidebar #toggle-menu {
+  inset: 8px 8px auto auto;
+}
+
+[data-scheme="dark"] .left-sidebar header.home-profile {
+  background: rgba(31, 26, 38, 0.94);
+
+  .home-profile-nav a {
+    background: #493b50;
+    color: #f9edf8;
+
+    &:hover,
+    &:focus-visible {
+      background: #624c66;
+    }
+  }
+}
+
 //文章封面高度更改
 .article-list article .article-image img {
   width: 100%;

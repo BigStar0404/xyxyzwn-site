@@ -2,7 +2,7 @@
 title: 程小时与陆光 · 宿命纠缠的双生火焰
 description: 解析《时光代理人》中程陆关系的多维度联结
 date: 2025-03-16
-image: cxslg_3.jpg
+image: cover.jpg
 categories:
     - 程小时
     - 陆光

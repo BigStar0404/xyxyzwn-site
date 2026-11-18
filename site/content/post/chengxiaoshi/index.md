@@ -2,7 +2,7 @@
 title: 程小时
 description: 程小时的介绍
 date: 2025-03-15
-image: cxs_2.jpg
+image: cover.jpg
 categories:
     - 程小时
     - cxs

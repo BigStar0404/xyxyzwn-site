@@ -20,7 +20,7 @@ languages:
         weight: 1
         params:
             sidebar:
-                subtitle: 我的个人博客空间这此~
+                subtitle: 我的个人博客，记录《时光代理人》图赏和角色随笔
     en:
         languageName: English
         title: Example Site

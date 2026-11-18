@@ -2,7 +2,7 @@
 title: 陆光
 description: 陆光的介绍
 date: 2025-03-15
-image: lg_1.jpg
+image: cover.jpg
 categories:
     - 陆光
     - lg
